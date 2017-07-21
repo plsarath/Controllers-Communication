@@ -1,0 +1,33 @@
+<html ng-app="BEApp">
+    <head>
+<script src="https://code.angularjs.org/1.6.1/angular.min.js"></script>
+<script src="BEApp.js"></script>
+    </head>
+    <body>
+        <div ng-controller="parentController">
+         <h1>Parent</h1>
+        <p> {{WhoAmI}}</p>
+        <button ng-click="broadcastByParent()">Broadcast By Parent</button>
+    <p>{{message}}</p>
+             
+             <div ng-controller="siblingController1">
+        <h1>Sibling 1</h1>
+         <p>{{WhoAmI}}</p>
+         <button ng-click="emitToParent()">Emit To Parent </button>
+
+         <p>{{childmessage}}</p>
+            </div>
+
+            <div ng-controller="siblingController2">
+            <h1>Sibling 2</h1>
+        <p> {{WhoAmI}}</p>
+
+        <button ng-click="msgToSibling1()">Message to Sibling 1 </button>
+            </div>
+
+            
+</div>
+            
+
+    </body>
+    </html>
